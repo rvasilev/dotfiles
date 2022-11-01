@@ -1,0 +1,5 @@
+[user]
+	email = 2rvasilev@live.ru
+	name = Roman Vasilev
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret

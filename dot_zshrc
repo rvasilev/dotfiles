@@ -1,7 +1,9 @@
-#export PATH=$PATH:/home/roman/.local/bin
+export PATH="$PATH:$(python3 -m site --user-base)/bin"
 #export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 # eval $(keychain --eval --quiet)
+
+# export PATH="$HOME/.local/bin:$PATH"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -75,3 +77,14 @@ zinit light lukechilds/zsh-nvm
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 eval $(chezmoi completion zsh)
+
+
+# bash complitions
+zinit wait lucid nocd depth=1 \
+    atinit='ZSH_BASH_COMPLETIONS_FALLBACK_LAZYLOAD_DISABLE=true' \
+      for 3v1n0/zsh-bash-completions-fallback
+
+# pnpm
+export PNPM_HOME="/home/roman/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
